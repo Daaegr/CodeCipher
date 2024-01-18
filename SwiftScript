@@ -1,0 +1,11 @@
+from cryptography.fernet import Fernet
+
+key = Fernet.generate_key()
+cipher_suite = Fernet(key)
+
+plain_text = b"Secret message!"
+cipher_text = cipher_suite.encrypt(plain_text)
+print(cipher_text)
+
+decrypted_text = cipher_suite.decrypt(cipher_text)
+print(decrypted_text)
